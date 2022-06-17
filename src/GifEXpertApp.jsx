@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { AddCategory } from './components/AddCategory';
+
+import { AddCategory, GifGrid } from './components';
 import './styles/styles.css';
 
 
 export const GifEXpertApp = () => {
 
-  const [categories, setCategories] = useState([ 'Spy&Family', 'Hunter X' ]);
+  const [categories, setCategories] = useState([]);
 
   const onAddCategory = (newCategory) => { 
     // valida si existe y no lo ingresa, la validacion es completa en lower case, para evitar el case sensitibe
@@ -29,21 +30,17 @@ export const GifEXpertApp = () => {
           // la implementacion de abajo es mejor, ya que hace llegar el valor y evita complicar las cosas
           onNewCategory={ onAddCategory }
         />
-        <button
-        > 
-          Agregar 
-        </button>
+
         {/* Listado de gif */}
-        <ol>
-          { 
-            categories.map( category => {
-              return <li key={ category }> { category } </li>
-            })
-          }
-          {/* <li>123</li>
-          <li>456</li>
-          <li>789</li> */}
-        </ol>
+        
+        { 
+          categories.map( category =>
+            <GifGrid 
+              category={ category }
+              key={ category } 
+            />
+          )
+        }
         {/* gif item */}
 
     </>
