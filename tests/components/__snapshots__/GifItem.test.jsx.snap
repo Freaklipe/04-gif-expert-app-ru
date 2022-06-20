@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en GiftItem debe ser igual al snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="One Piece"
+      src="https://one-piece.com/onepiece.jpg"
+    />
+    <p>
+       
+      One Piece
+       
+    </p>
+  </div>
+</div>
+`;
